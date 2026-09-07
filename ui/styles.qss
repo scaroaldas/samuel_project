@@ -1,0 +1,139 @@
+/* =========================================
+   NEURAL BRAIN MAPPER - STYLESHEET (QSS)
+   ========================================= */
+
+/* --- 1. BASE Y FONDO GLOBAL --- */
+QMainWindow {
+    background-color: #05070A; /* Void Black */
+}
+
+/* --- 2. PANELES PRINCIPALES (Glassmorphism) --- */
+QFrame#PanelChat, QFrame#PanelBrain, QFrame#PanelStats,
+QWidget#PanelChat, QWidget#PanelBrain, QWidget#PanelStats {
+    background-color: #0D1117; /* Panel Glass */
+    border: 1px solid #21262D; /* Borde sutil base */
+    border-radius: 16px;       /* Bordes redondeados modernos */
+    /* Efecto de luz ambiental superior/izquierda */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- 3. TIPOGRAFÍA Y TÍTULOS --- */
+QLabel#StatTitle {
+    color: #8B949E;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+QLabel#StatLabel {
+    color: #8B949E;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13px;
+}
+
+QLabel#StatValue {
+    color: #00E5FF; /* Neural Cyan por defecto */
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* --- 4. PANEL DE CHAT --- */
+QTextEdit#ChatHistory {
+    background-color: transparent;
+    border: none;
+    color: #E6EDF3;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+QLineEdit#ChatInput {
+    background-color: #161B22;
+    border: 1px solid #21262D;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #E6EDF3;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+QLineEdit#ChatInput:focus {
+    border: 1px solid #00E5FF; /* Brillo cyan al escribir */
+}
+
+QPushButton#SendButton {
+    background-color: #00E5FF;
+    color: #05070A;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+QPushButton#SendButton:hover {
+    background-color: #33EAFF;
+}
+
+QPushButton#SendButton:pressed {
+    background-color: #00B8CC;
+}
+
+/* --- 5. PANEL CEREBRO (PLACEHOLDER) --- */
+QLabel#BrainPlaceholder {
+    color: #484F58;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 16px;
+    border: 2px dashed #21262D;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: rgba(0, 229, 255, 0.03);
+}
+
+QLabel#BrainStatus {
+    color: #8B949E;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* --- 6. BARRAS DE PROGRESO (ONDAS) --- */
+QProgressBar#NeuroProgressBar {
+    border: 1px solid #21262D;
+    border-radius: 4px;
+    background-color: #161B22;
+    min-height: 8px;
+    max-height: 8px;
+}
+
+QProgressBar#NeuroProgressBar::chunk {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #B026FF, stop:1 #00E5FF);
+    border-radius: 3px;
+}
+/* Integración perfecta del Plotter 3D */
+QFrame#PanelBrain {
+    padding: 0px; /* Elimina padding interno para que el 3D toque los bordes redondeados */
+}
+
+/* Personalización de la barra de herramientas si decides mostrarla */
+QToolBar {
+    background-color: rgba(13, 17, 23, 0.9);
+    border: none;
+    spacing: 4px;
+}
+QToolButton {
+    background-color: transparent;
+    color: #8B949E;
+    border-radius: 4px;
+    padding: 4px;
+}
+QToolButton:hover {
+    background-color: #21262D;
+    color: #00E5FF;
+}
