@@ -1,0 +1,93 @@
+{
+  "session": "session_20260909_204747.json",
+  "entries": [
+    {
+      "timestamp": "2026-09-09T20:48:42",
+      "type": "user",
+      "content": "eh digo hola hola hola hola hola hola hola hola soy Samuel"
+    },
+    {
+      "timestamp": "2026-09-09T20:48:42",
+      "type": "patient_answer",
+      "content": "eh digo hola hola hola hola hola hola hola hola soy Samuel"
+    },
+    {
+      "timestamp": "2026-09-09T20:48:44",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.987
+    },
+    {
+      "timestamp": "2026-09-09T20:48:44",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    },
+    {
+      "timestamp": "2026-09-09T20:51:24",
+      "type": "user",
+      "content": "Hola hola Cómo estamos Cómo estamos por aquí Yes Oh my God"
+    },
+    {
+      "timestamp": "2026-09-09T20:51:24",
+      "type": "patient_answer",
+      "content": "Hola hola Cómo estamos Cómo estamos por aquí Yes Oh my God"
+    },
+    {
+      "timestamp": "2026-09-09T20:51:27",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.808
+    },
+    {
+      "timestamp": "2026-09-09T20:51:27",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    },
+    {
+      "timestamp": "2026-09-09T20:51:38",
+      "type": "user",
+      "content": "de acuerdo algo de mi pasado De hecho no no tengo"
+    },
+    {
+      "timestamp": "2026-09-09T20:51:38",
+      "type": "patient_answer",
+      "content": "de acuerdo algo de mi pasado De hecho no no tengo"
+    },
+    {
+      "timestamp": "2026-09-09T20:51:41",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.84
+    },
+    {
+      "timestamp": "2026-09-09T20:51:41",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    },
+    {
+      "timestamp": "2026-09-09T20:53:53",
+      "type": "user",
+      "content": "todo esto Hola soy Samuel tengo dos huevos"
+    },
+    {
+      "timestamp": "2026-09-09T20:53:53",
+      "type": "patient_answer",
+      "content": "todo esto Hola soy Samuel tengo dos huevos"
+    },
+    {
+      "timestamp": "2026-09-09T20:53:55",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.951
+    },
+    {
+      "timestamp": "2026-09-09T20:53:55",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    }
+  ]
+}

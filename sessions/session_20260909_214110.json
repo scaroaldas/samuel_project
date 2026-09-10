@@ -1,0 +1,66 @@
+{
+  "session": "session_20260909_214110.json",
+  "entries": [
+    {
+      "timestamp": "2026-09-09T21:41:26",
+      "type": "user",
+      "content": "Cómo estamos El día de hoy chat estoy listo para el examen"
+    },
+    {
+      "timestamp": "2026-09-09T21:41:26",
+      "type": "patient_answer",
+      "content": "Cómo estamos El día de hoy chat estoy listo para el examen"
+    },
+    {
+      "timestamp": "2026-09-09T21:41:28",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.783
+    },
+    {
+      "timestamp": "2026-09-09T21:41:28",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    },
+    {
+      "timestamp": "2026-09-09T21:41:38",
+      "type": "user",
+      "content": "Mmm qué tipo de matices aún no estás conectado"
+    },
+    {
+      "timestamp": "2026-09-09T21:41:38",
+      "type": "patient_answer",
+      "content": "Mmm qué tipo de matices aún no estás conectado"
+    },
+    {
+      "timestamp": "2026-09-09T21:41:40",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.876
+    },
+    {
+      "timestamp": "2026-09-09T21:41:40",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    },
+    {
+      "timestamp": "2026-09-09T21:42:13",
+      "type": "user",
+      "content": "chat estas hay?"
+    },
+    {
+      "timestamp": "2026-09-09T21:42:14",
+      "type": "analysis",
+      "content": "Neutral",
+      "region": "Frontal",
+      "level": 0.824
+    },
+    {
+      "timestamp": "2026-09-09T21:42:14",
+      "type": "ai",
+      "content": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+    }
+  ]
+}

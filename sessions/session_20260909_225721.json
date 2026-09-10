@@ -1,0 +1,19 @@
+{
+  "session": "session_20260909_225721.json",
+  "entries": [
+    {
+      "timestamp": "2026-09-09T22:57:43",
+      "type": "patient_answer",
+      "content": "aló"
+    },
+    {
+      "timestamp": "2026-09-09T22:57:47",
+      "type": "ai_response",
+      "content": "Buen día, ¿cómo estás? Soy el Dr. García, neuropsicólogo. ¿Te sientes cómodo para comenzar?",
+      "emotion": "Calm",
+      "region": "Frontal",
+      "intensity": 0.5,
+      "clinical_note": "Paciente responde al saludo, inicia la entrevista."
+    }
+  ]
+}

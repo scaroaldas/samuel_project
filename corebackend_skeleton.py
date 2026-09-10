@@ -18,6 +18,13 @@ class ChatMessage:
     content: str
 
 @dataclass
+class BrainActivationResult:
+    """Resultado del análisis cognitivo/emocional del texto."""
+    dominant_region: str      # "Frontal", "Parietal", "Temporal", "Occipital"
+    activation_level: float   # 0.0 a 1.0
+    emotional_state: str      # "Calm", "Stressed", "Focused", "Neutral"
+
+@dataclass
 class BrainWaveData:
     alpha: float
     beta: float
@@ -30,34 +37,69 @@ class BrainRegion:
     activation_level: float
 
 # ==========================================
-# MOTORES DEL BACKEND
+# MOTOR DE ENTREVISTA (Analiza el chat)
 # ==========================================
 
 class InterviewEngine(QObject):
     new_message = Signal(ChatMessage)
+    brain_activation = Signal(BrainActivationResult)
 
     def __init__(self):
         super().__init__()
         self._timer = QTimer()
         self._timer.timeout.connect(self._generate_mock_response)
+        self._last_text = ""
 
     def process_user_input(self, text: str):
+        """Recibe el texto del usuario y simula el procesamiento."""
         self.new_message.emit(ChatMessage(Role.USER, text))
-        self._timer.start(1500) 
+        self._last_text = text
+        # Latencia variable según longitud del texto
+        delay = max(1000, min(2500, len(text) * 50))
+        self._timer.start(delay)
 
     def _generate_mock_response(self):
         self._timer.stop()
-        responses = [
-            "Detecto un pico en tu lóbulo frontal. ¿Cómo te sientes?",
-            "Patrones Beta elevados. Intenta respirar profundo.",
-            "Fascinante red neuronal. ¿Recuerdas algo específico?",
-            "Alta carga cognitiva detectada en la corteza prefrontal."
-        ]
-        self.new_message.emit(ChatMessage(Role.AI, random.choice(responses)))
 
+        # Lógica simple de análisis por palabras clave
+        text = self._last_text.lower()
+        region = "Frontal"
+        state = "Neutral"
+
+        if "dolor" in text or "estrés" in text or "estres" in text or "miedo" in text or "ansiedad" in text:
+            region = "Temporal"
+            state = "Stressed"
+        elif "feliz" in text or "bien" in text or "alegre" in text or "tranquilo" in text:
+            region = "Frontal"
+            state = "Calm"
+        elif "pienso" in text or "analizo" in text or "recuerdo" in text or "memoria" in text:
+            region = "Parietal"
+            state = "Focused"
+
+        # Emitir el resultado del análisis cerebral
+        result = BrainActivationResult(
+            dominant_region=region,
+            activation_level=random.uniform(0.75, 0.99),
+            emotional_state=state
+        )
+        self.brain_activation.emit(result)
+
+        # Respuesta de la IA según el estado detectado
+        responses = {
+            "Stressed": "Detecto tensión en tu red neural. Respira y profundicemos en eso.",
+            "Calm": "Tus patrones indican un estado óptimo. Excelente conexión.",
+            "Focused": "Alta actividad cognitiva detectada. Continuemos el análisis.",
+            "Neutral": "Interesante. Mis sensores captan nuevos matices en tu respuesta."
+        }
+        self.new_message.emit(ChatMessage(Role.AI, responses.get(state, "Procesando datos...")))
+
+
+# ==========================================
+# MAPEADOR CEREBRAL (Telemetría continua)
+# ==========================================
 
 class BrainMapper(QObject):
-    data_updated = Signal(BrainWaveData, list) 
+    data_updated = Signal(BrainWaveData, list)
 
     def __init__(self):
         super().__init__()
@@ -65,6 +107,7 @@ class BrainMapper(QObject):
         self._timer.timeout.connect(self._emit_mock_data)
 
     def start_mapping(self):
+        """Inicia la emisión de datos biométricos simulados."""
         self._timer.start(1000)
 
     def _emit_mock_data(self):
@@ -75,9 +118,9 @@ class BrainMapper(QObject):
             delta=random.uniform(0.5, 3.0)
         )
         regions = [
-            BrainRegion("Lóbulo Frontal", random.uniform(0.1, 0.9)),
-            BrainRegion("Lóbulo Parietal", random.uniform(0.1, 0.9)),
-            BrainRegion("Lóbulo Temporal", random.uniform(0.1, 0.9)),
-            BrainRegion("Lóbulo Occipital", random.uniform(0.1, 0.9))
+            BrainRegion("Lóbulo Frontal", random.uniform(0.1, 0.5)),
+            BrainRegion("Lóbulo Parietal", random.uniform(0.1, 0.5)),
+            BrainRegion("Lóbulo Temporal", random.uniform(0.1, 0.5)),
+            BrainRegion("Lóbulo Occipital", random.uniform(0.1, 0.5))
         ]
         self.data_updated.emit(waves, regions)
